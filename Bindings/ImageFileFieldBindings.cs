@@ -11,7 +11,7 @@ namespace River.DynamicForms.Bindings
     public class ImageFileFieldBindings : Component, IBindingProvider {
         public void Describe(BindingDescribeContext context) {
             context.For<ImageFileField>()
-                .Binding("Text", (contentItem, field, s) => field.FilePath = s);
+                .Binding("Text", (contentItem, field) => field.FilePath, (contentItem, field, s) => field.FilePath = s);
         }
     }
 }
